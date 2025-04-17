@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* imported font styles */
+/* # Front-end Style Guide Layout:  Mobile: 375px,- Desktop: 1440px... screen sizes from 320px to large */
+
+/* ## Colors */
+/* ### Primary */
+
+:root {
+  --Green-400: hsl(172, 67%, 45%); /*reset btn bg , input border on focus*/
+  --Green-400-hover: hsl(172, 67%, 77%); /*reset btn bg on hover */
+  --Red-error: hsl(0, 60%, 60%); /*error color */
+  /* ### Neutral */
+  --Green-900: hsl(183, 100%, 15%); /*button bg, sum btn text color */
+  --Grey-500: hsl(186, 14%, 43%); /* headings text color */
+  --Grey-400: hsl(184, 14%, 56%); /* icon,  subheading text color */
+  --Grey-200: hsl(185, 41%, 84%); /* page bg */
+  --Grey-50: hsl(189, 47%, 97%); /* inputs bg */
+  --White: hsl(0, 100%, 100%); /* card bg, summary heading color  */
+  /* ## Typography */
+
+  /* ### Body Copy */
+  --Font-form-inputs: 24px;
+
+  /* ### Font */
+  --Font-space-mono: "Space Mono", monospace;
+  --Font-700: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+button,
+input {
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--Grey-200);
+  min-height: 100vh;
+}
+header {
+  text-align: center;
+  padding-block: 3rem 2rem;
+}
+/* #logoImg {
+  border: 1px solid blue;
+} */
+main {
+  background-color: var(--White);
+  border-radius: 1.5rem 1.5rem 0 0;
+  padding: 1.5rem;
+  font-family: var(--Font-space-mono);
+  max-width: 920px;
+  width: 100%;
+}
+
+section.controls {
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+section.controls .bill-total {
+  /* border: 1px solid red; */
+  padding-bottom: 2.5rem;
+}
+section.controls .bill-total .heading,
+.people .heading {
+  display: block;
+  /* background-color: red; */
+  padding-bottom: 0.5rem;
+  /* margin-left: -24px; */
+  max-width: 100%;
+}
+section.controls .heading {
+  color: var(--Grey-500);
+  font-weight: var(--Font-700);
+}
+section.controls label {
+  font-size: 1rem;
+  padding-bottom: 0.5rem;
+}
+section.controls input {
+  color: var(--Green-900);
+  background-color: var(--Grey-50);
+  border: 1px solid var(--White);
+  inset: none;
+  outline: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: end;
+  font-weight: 700;
+  width: 100%;
+  border-radius: 4px;
+}
+
+section.controls input:hover,
+section.controls input:focus {
+  border-color: var(--Green-400);
+  /* background-color: red; */
+}
+
+.input__icon {
+  position: relative;
+  font-size: 24px;
+}
+.input__icon::after {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 16px;
+  color: var(--Grey-400);
+}
+.input__icon--dollar::after {
+  content: url(./images/icon-dollar.svg);
+}
+
+.input__icon--person::after {
+  content: url(./images/icon-person.svg);
+}
+
+.controls .tip .heading {
+  padding-bottom: 16px;
+}
+
+.controls .tip .tip__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 3rem);
+  gap: 16px;
+  padding-bottom: 40px;
+  /* border: 1px solid red; */
+}
+
+.controls .tip .tip__grid .tip__btn,
+.btn {
+  background-color: var(--Green-900);
+  color: var(--Grey-50);
+  border: 0;
+  inset: 0;
+  outline: none;
+  border-radius: 0.25rem;
+  font-weight: var(--Font-700);
+  font-size: 18px;
+  /* padding: 16px; */
+}
+.controls .tip .tip__grid .tip__btn:hover,
+.controls .tip .tip__grid .tip__btn:focus,
+.btn:hover .btn:focus {
+  background-color: var(--Green-400);
+  color: var(--Green-900);
+  border: 1px solid var(--Green-400);
+  border-radius: 4px;
+}
+
+.controls .tip .tip__grid .tip__btn.custom {
+  border-radius: 0.25rem;
+  outline: none;
+  border: none;
+  inset: none;
+  border: 1px solid var(--White);
+  background-color: var(--Grey-50);
+  color: var(--Green-900);
+}
+.controls .tip .tip__grid .tip__btn.custom::placeholder {
+  color: var(--Grey-400);
+}
+
+.controls .tip .tip__grid .tip__btn.custom:focus,
+.controls .tip .tip__grid .tip__btn.custom:hover {
+  border-color: var(--Green-400);
+}
+.people .wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* misfires and error ///////////////////////// */
+.error-msg {
+  visibility: hidden;
+  align-items: space-between;
+  color: var(--Red-error);
+  font-weight: var(--Font-700);
+}
+.error-msg.on {
+  visibility: visible;
+}
+
+/* turns on after error eg mising num of ppls */
+section.controls .qty-people.on {
+  border-color: var(--Red-error);
+}
+
+/* misfires and error  ////////////////////// */
+
+/* seconda section */
+
+section + section {
+  margin-top: 32px;
+}
+.summary {
+  background-color: var(--Green-900);
+  padding: 48px 24px 24px 24px;
+  border-radius: 1rem;
+}
+
+.summary .tip-amt,
+.summary .total-amt {
+  /* padding-top: 24px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 32px;
+}
+
+.summary .heading h1 {
+  color: var(--White);
+  font-weight: var(--Font-700);
+  line-height: 1;
+  font-size: 1rem;
+}
+
+.summary .heading h2 {
+  color: var(--Grey-200);
+  font-weight: var(--Font-700);
+  font-size: 13px;
+}
+
+.summary .amount {
+  color: var(--Green-400);
+  font-weight: var(--Font-700);
+  font-size: 32px;
+}
+
+.reset-btn {
+  display: block;
+  width: 100%;
+  height: 48px;
+  background-color: var(--Green-400);
+  opacity: 0.4;
+  color: var(--Green-900);
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+.reset-btn.active {
+  opacity: 1;
+}
+.reset-btn:hover,
+.reset-btn:focus {
+  background-color: var(--Green-400-hover);
+}
+/* desktop 1440px styling */
+
+@media screen and (min-width: 800px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+  }
+  header {
+    padding-block: 0 5.5rem;
+  }
+  main {
+    padding: 2rem;
+    display: flex;
+  }
+  section.controls {
+    padding: 1rem 1rem;
+  }
+
+  section.controls .bill-total {
+    padding-bottom: 3rem;
+  }
+  .controls .heading {
+    font-size: 1rem;
+  }
+
+  .controls .tip .tip__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 7.25rem);
+    grid-template-rows: repeat(2, 3rem);
+    padding-bottom: 40px;
+  }
+  /* between control and summary section */
+
+  section + section {
+    margin-top: 0;
+    margin-left: 32px;
+  }
+
+  /* summary section  */
+  .summary {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Green-900);
+    padding: 48px 24px 24px 24px;
+    border-radius: 1rem;
+    max-width: 412px;
+    width: 100%;
+  }
+
+  .summary .tip-amt,
+  .summary .total-amt {
+    padding-bottom: 32px;
+  }
+
+  .summary .heading h1 {
+    color: var(--White);
+    font-weight: var(--Font-700);
+    line-height: 1;
+    font-size: 1rem;
+  }
+
+  .summary .heading h2 {
+    color: var(--Grey-200);
+    font-weight: var(--Font-700);
+    font-size: 13px;
+  }
+
+  .summary .amount {
+    color: var(--Green-400);
+    font-weight: var(--Font-700);
+    font-size: 32px;
+  }
+
+  .summary .reset-btn {
+    /* display: block; */
+    margin-top: auto;
+    width: 100%;
+    height: 48px;
+    /* background-color: var(--Green-400); */
+    color: var(--Green-900);
+    font-size: 1.25em;
+    text-transform: uppercase;
+    align-self: flex-end;
+  }
+}

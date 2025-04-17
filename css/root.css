@@ -1,0 +1,20 @@
+:root {
+    --Green-400: hsl(172, 67%, 45%); /*reset btn bg , input border on focus*/
+    --Green-400-hover: hsl(172, 67%, 77%); /*reset btn bg on hover */
+    --Red-error: hsl(0, 60%, 60%); /*error color */
+    /* ### Neutral */
+    --Green-900: hsl(183, 100%, 15%); /*button bg, sum btn text color */
+    --Grey-500: hsl(186, 14%, 43%); /* controls headings text color */
+    --Grey-400: hsl(184, 14%, 56%); /* icon,  subheading text color */
+    --Grey-200: hsl(185, 41%, 84%); /* page bg */
+    --Grey-50: hsl(189, 47%, 97%); /* inputs bg */
+    --White: hsl(0, 100%, 100%); /* card bg, summary heading color  */
+    /* ## Typography */
+  
+    /* ### Body Copy */
+    --Font-form-inputs: 24px;
+  
+    /* ### Font */
+    --Font-space-mono: "Space Mono", monospace;
+    --Font-700: 700;
+  }
